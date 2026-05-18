@@ -3,7 +3,8 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import Features from './components/Features';
 import Services from './components/Services';
-import Testimonials from './components/Testimonials'; // 1. Importar o novo componente
+import Testimonials from './components/Testimonials';
+import Faq from './components/Faq'; // 1. Importar o novo componente de FAQ
 import Footer from './components/Footer';
 import Loading from './components/Loading';
 
@@ -44,7 +45,8 @@ function App() {
         <Hero whatsappUrl={whatsappUrl} />
         <Features />
         <Services whatsappUrl={whatsappUrl} />
-        <Testimonials /> {/* 2. Adicionar aqui abaixo de Serviços */}
+        <Testimonials />
+        <Faq /> {/* 2. Encaixar o FAQ aqui */}
       </main>
       <Footer 
         whatsappUrl={whatsappUrl}
