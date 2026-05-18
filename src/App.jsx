@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Features from './components/Features';
 import Services from './components/Services';
+import Testimonials from './components/Testimonials'; // 1. Importar o novo componente
 import Footer from './components/Footer';
+import Loading from './components/Loading';
 
 function App() {
-  // Configurações Globais da Empresa - Ajuste aqui quando necessário
+  const [isLoading, setIsLoading] = useState(true);
+  const [fadeOut, setFadeOut] = useState(false);
+
+  // Configurações Globais da Empresa
   const whatsappNumber = "553183819552"; 
   const instagramUser = "_bossdetail"; 
   const addressText = "Rua taurus 314 condomínio portal do Sol";
@@ -15,13 +20,31 @@ function App() {
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=Ol%C3%A1%21+Gostaria+de+conhecer+os+servi%C3%A7os+da+Boss+Detail+e+fazer+um+or%C3%A7amento.`;
   const instagramUrl = `https://instagram.com/${instagramUser}`;
 
+  useEffect(() => {
+    const fadeTimeout = setTimeout(() => {
+      setFadeOut(true);
+    }, 1500);
+
+    const removeTimeout = setTimeout(() => {
+      setIsLoading(false);
+    }, 2200);
+
+    return () => {
+      clearTimeout(fadeTimeout);
+      clearTimeout(removeTimeout);
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-zinc-950 text-zinc-100 font-sans selection:bg-lime-500 selection:text-black">
+      {isLoading && <Loading fadeOut={fadeOut} />}
+
       <Header whatsappUrl={whatsappUrl} />
       <main>
         <Hero whatsappUrl={whatsappUrl} />
         <Features />
         <Services whatsappUrl={whatsappUrl} />
+        <Testimonials /> {/* 2. Adicionar aqui abaixo de Serviços */}
       </main>
       <Footer 
         whatsappUrl={whatsappUrl}

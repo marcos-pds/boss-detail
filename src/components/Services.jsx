@@ -1,4 +1,5 @@
 import React from 'react';
+import ScrollAnimate from './ScrollAnimate';
 
 export default function Services({ whatsappUrl }) {
   return (
@@ -9,6 +10,8 @@ export default function Services({ whatsappUrl }) {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <ScrollAnimate>
         <div className="bg-zinc-900 border border-zinc-800/80 p-6 rounded-2xl hover:border-lime-500/30 transition-all flex flex-col justify-between">
           <div>
             <h3 className="text-xl font-bold mb-2">Polimento Técnico</h3>
@@ -18,7 +21,9 @@ export default function Services({ whatsappUrl }) {
             Consultar preço →
           </a>
         </div>
+      </ScrollAnimate>
 
+      <ScrollAnimate>
         <div className="bg-zinc-900 border border-zinc-800/80 p-6 rounded-2xl hover:border-lime-500/30 transition-all flex flex-col justify-between">
           <div>
             <h3 className="text-xl font-bold mb-2">Polimento Farol</h3>
@@ -28,7 +33,9 @@ export default function Services({ whatsappUrl }) {
             Consultar preço →
           </a>
         </div>
+    </ScrollAnimate>
 
+    <ScrollAnimate>
         <div className="bg-zinc-900 border border-zinc-800/80 p-6 rounded-2xl hover:border-lime-500/30 transition-all flex flex-col justify-between">
           <div>
             <h3 className="text-xl font-bold mb-2">Vitrificação de Pintura</h3>
@@ -38,7 +45,9 @@ export default function Services({ whatsappUrl }) {
             Consultar preço →
           </a>
         </div>
+    </ScrollAnimate>
 
+    <ScrollAnimate>
         <div className="bg-zinc-900 border border-zinc-800/80 p-6 rounded-2xl hover:border-lime-500/30 transition-all flex flex-col justify-between">
           <div>
             <h3 className="text-xl font-bold mb-2">Higienização Detalhada</h3>
@@ -48,8 +57,9 @@ export default function Services({ whatsappUrl }) {
             Consultar preço →
           </a>
         </div>
+    </ScrollAnimate>
 
-
+    <ScrollAnimate>
         <div className="bg-zinc-900 border border-zinc-800/80 p-6 rounded-2xl hover:border-lime-500/30 transition-all flex flex-col justify-between">
           <div>
             <h3 className="text-xl font-bold mb-2">Higienização do Motor</h3>
@@ -59,7 +69,9 @@ export default function Services({ whatsappUrl }) {
             Consultar preço →
           </a>
         </div>
+    </ScrollAnimate>
 
+    <ScrollAnimate>
         <div className="bg-zinc-900 border border-zinc-800/80 p-6 rounded-2xl hover:border-lime-500/30 transition-all flex flex-col justify-between">
           <div>
             <h3 className="text-xl font-bold mb-2">Hidratação de Couro</h3>
@@ -69,6 +81,7 @@ export default function Services({ whatsappUrl }) {
             Consultar preço →
           </a>
         </div>
+    </ScrollAnimate>
       </div>
     </section>
   );
